@@ -39,23 +39,53 @@
 
 // console.log(somaNumber(3, 5));
 
-interface ProdutosType {
-  id: number;
-  nome: string;
-  preco: number;
-  disponivel: boolean;
+// interface ProdutosType {
+//   id: number;
+//   nome: string;
+//   preco: number;
+//   disponivel: boolean;
+// }
+
+// const productsBio: ProdutosType[] = [
+//   { id: 1, nome: "Perfume", preco: 100.0, disponivel: true },
+//   { id: 1, nome: "Batom", preco: 50.0, disponivel: true },
+//   { id: 1, nome: "Gloss", preco: 20.0, disponivel: false },
+// ];
+
+// function getProducts(productsBio: ProdutosType[]): string[] {
+//   const getProductsTrue = productsBio
+//     .filter((productsBio) => productsBio.disponivel === true)
+//     .map((productsBio) => productsBio.nome);
+//   return getProductsTrue;
+// }
+// console.log(getProducts(productsBio));
+
+// let nomes: string | number;
+// nomes = 20;
+// console.log(nomes);
+
+function formatarEntrada(input: string | number): string {
+  if (typeof input === "string") {
+    return input.toUpperCase();
+  } else {
+    return input.toLocaleString("pt-br", {
+      style: "currency",
+      currency: "BRL",
+    });
+  }
 }
 
-const productsBio: ProdutosType[] = [
-  { id: 1, nome: "Perfume", preco: 100.0, disponivel: true },
-  { id: 1, nome: "Batom", preco: 50.0, disponivel: true },
-  { id: 1, nome: "Gloss", preco: 20.0, disponivel: false },
-];
+console.log(formatarEntrada("Ryan"));
+console.log(formatarEntrada(20));
 
-function getProducts(productsBio: ProdutosType[]): string[] {
-  const getProductsTrue = productsBio
-    .filter((productsBio) => productsBio.disponivel === true)
-    .map((productsBio) => productsBio.nome);
-  return getProductsTrue;
-}
-console.log(getProducts(productsBio));
+// A função deve ter : string no retorno
+// Dentro dela, use typeof para diferenciar
+// Use .toUpperCase() com string
+// Use .toLocaleString() com number
+
+// 📌 Se for string:
+// Usa .toUpperCase() e retorna
+// 📌 Se for number:
+// Usa .toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }) e retorna
+// 🧩 E mais um detalhe:
+// Você ainda não tipou o retorno da função — é importante colocar:
