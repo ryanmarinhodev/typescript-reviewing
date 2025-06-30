@@ -89,3 +89,7 @@ console.log(formatarEntrada(20));
 // Usa .toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }) e retorna
 // 🧩 E mais um detalhe:
 // Você ainda não tipou o retorno da função — é importante colocar:
+
+// para rodar:
+// npx tsx \pasta
+// ts-node \pasta
