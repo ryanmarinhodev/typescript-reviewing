@@ -6,7 +6,7 @@ function FormularioState() {
   const [active, setActive] = useState<boolean>(false);
   return (
     <>
-      <h1>Formulário Simples </h1>
+      <h1>Formulário Simples</h1>
       <div>
         Nome:
         <div className="bg-amber-600">
