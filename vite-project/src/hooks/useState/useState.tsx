@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 interface FormularioInterface {
   nome: string;
   idade: number;
@@ -5,6 +7,10 @@ interface FormularioInterface {
 }
 
 function FormularioState() {
+  const [name, setName] = useState<string>('');
+  const [idade, setIdade] = useState<number>();
+  const [active, setActive] = useState<boolean>(true);
+
   return (
     <>
       <h1>Formulário Simples </h1>
