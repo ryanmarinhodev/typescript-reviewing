@@ -1,12 +1,14 @@
+import { BrowserRouter } from "react-router-dom";
 import "./App.css";
-import ListaTarefas from "./hooks/useState/ListaTarefas";
-import FormularioState from "./hooks/useState/useStateForm";
+
+import AppRoutes from "./Routes";
 
 function App() {
   return (
     <div>
-      <FormularioState />
-      <ListaTarefas />
+      <BrowserRouter>
+        <AppRoutes />
+      </BrowserRouter>
     </div>
   );
 }

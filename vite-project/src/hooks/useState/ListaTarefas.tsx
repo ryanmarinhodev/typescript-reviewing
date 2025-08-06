@@ -23,7 +23,6 @@ function ListaTarefas() {
 
     setTarefa((prev) => [...prev, novaTarefa]);
     setInput("");
-    console.log(novaTarefa);
   };
 
   const removeTask = () => {
@@ -34,12 +33,11 @@ function ListaTarefas() {
     setTarefa((prev) =>
       prev.map((td) => (td.id === id ? { ...td, concluida: true } : td))
     );
-    console.log("Clicou");
   };
 
   return (
     <>
-      <div className="w-full h-full bg-blue-950 flex flex-col">
+      <div className="w-full h-full bg-blue-950">
         <div>
           <input
             type="text"
@@ -67,5 +65,7 @@ function ListaTarefas() {
     </>
   );
 }
+
+// ESTILIZAR O RETURN
 
 export default ListaTarefas;
