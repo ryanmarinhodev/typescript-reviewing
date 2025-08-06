@@ -27,7 +27,14 @@ function ListaTarefas() {
   };
 
   const removeTask = () => {
-    setInput("");
+    setTarefa([]);
+  };
+
+  const concluirTarefa = (id: number) => {
+    setTarefa((prev) =>
+      prev.map((td) => (td.id === id ? { ...td, concluida: true } : td))
+    );
+    console.log("Clicou");
   };
 
   return (
@@ -43,13 +50,18 @@ function ListaTarefas() {
           <button onClick={createTask}>Adicionar</button>
         </div>
         <div>
-          {tarefa.map((td) => (
-            <span key={td.id}>
-              {`${td.titulo}`}{" "}
-              {td.concluida ? "(Tarefa Concluida)" : "(Tarefa Pendente)"}
-            </span>
-          ))}
-          <button onClick={removeTask}></button>
+          <div>
+            {tarefa.map((td) => (
+              <span key={td.id}>
+                {`${td.titulo}`}{" "}
+                {td.concluida ? "(Tarefa Concluida)" : "(Tarefa Pendente)"}
+                <button onClick={() => concluirTarefa(td.id)}>
+                  Concluir Tarefa
+                </button>
+              </span>
+            ))}
+          </div>
+          <button onClick={removeTask}>Limpar Tarefa</button>
         </div>
       </div>
     </>
