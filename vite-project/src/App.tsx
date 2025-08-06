@@ -1,12 +1,14 @@
-import './App.css'
-import FormularioState from './hooks/useState/useState'
+import "./App.css";
+import ListaTarefas from "./hooks/useState/ListaTarefas";
+import FormularioState from "./hooks/useState/useStateForm";
 
 function App() {
   return (
-      <div>
+    <div>
       <FormularioState />
-      </div>
-  )
+      <ListaTarefas />
+    </div>
+  );
 }
 
-export default App
+export default App;
