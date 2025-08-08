@@ -1,4 +1,5 @@
 import { Link, Outlet } from "react-router-dom";
+import { paths } from "./paths";
 
 function Home() {
   return (
@@ -13,7 +14,7 @@ function Home() {
 
         <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
           <Link
-            to="/252/useState"
+            to={paths.LISTA_TAREFAS}
             className="bg-blue-800 hover:bg-blue-700 rounded-xl p-6 transition transform hover:-translate-y-1 shadow-md"
           >
             <h2 className="text-xl font-semibold mb-2">useState</h2>
@@ -23,12 +24,21 @@ function Home() {
           </Link>
 
           <Link
-            to="/252/useStateForm"
+            to={paths.FORMULARIO}
             className="bg-blue-800 hover:bg-blue-700 rounded-xl p-6 transition transform hover:-translate-y-1 shadow-md"
           >
             <h2 className="text-xl font-semibold mb-2">useState Form</h2>
             <p className="text-gray-300 text-sm">
               Formulário controlado com useState
+            </p>
+          </Link>
+          <Link
+            to={paths.PRODUTOS}
+            className="bg-blue-800 hover:bg-blue-700 rounded-xl p-6 transition transform hover:-translate-y-1 shadow-md"
+          >
+            <h2 className="text-xl font-semibold mb-2">Produtos</h2>
+            <p className="text-gray-300 text-sm">
+              Produtos controlado com useState
             </p>
           </Link>
         </div>
