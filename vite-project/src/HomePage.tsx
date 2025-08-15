@@ -8,9 +8,7 @@ function Home() {
         <h1 className="text-4xl md:text-5xl font-bold mb-4">
           Exercícios de React
         </h1>
-        <p className="text-lg text-gray-300 mb-10">
-          Exercícios desenvolvidos com React + TailwindCSS por Ryan.
-        </p>
+        <p className="text-lg text-gray-300 mb-10">Exercícios de useState:</p>
 
         <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
           <Link
@@ -45,6 +43,20 @@ function Home() {
       </div>
 
       <div className="mt-12">
+        <p>Exercícios de useEffect:</p>
+        <div className="max-w-5xl mx-auto text-center">
+          <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 p-7">
+            <Link
+              to={paths.TITULOS_DINAMICOS}
+              className="bg-blue-800 hover:bg-blue-700 rounded-xl p-6 transition transform hover:-translate-y-1 shadow-md"
+            >
+              <h2 className="text-xl font-semibold mb-2">useState</h2>
+              <p className="text-gray-300 text-sm">
+                Lista de tarefas usando useState
+              </p>
+            </Link>
+          </div>
+        </div>
         <Outlet />
       </div>
     </div>

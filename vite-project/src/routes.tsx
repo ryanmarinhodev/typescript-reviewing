@@ -3,6 +3,7 @@ import Home from "./HomePage";
 import FormularioState from "./hooks/useState/useStateForm";
 import ListaTarefas from "./hooks/useState/ListaTarefas";
 import ProdutosListFiltros from "./hooks/useState/ProductsListFilter";
+import TituloDinamico from "./hooks/useEffect/TituloDinamico";
 
 function AppRoutes() {
   return (
@@ -12,6 +13,7 @@ function AppRoutes() {
           <Route path="lista-tarefas" element={<ListaTarefas />} />
           <Route path="formulario" element={<FormularioState />} />
           <Route path="produtos" element={<ProdutosListFiltros />} />
+          <Route path="titulos-dinamicos" element={<TituloDinamico />} />
         </Route>
       </Routes>
     </>
