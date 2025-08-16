@@ -8,8 +8,13 @@ interface ProductsListFilterInterface {
   disponivel: boolean;
 }
 
+interface Valores {
+  value: string;
+  label: string;
+}
+
 function ProdutosListFiltros() {
-  const [products, setProducts] = useState<ProductsListFilterInterface[]>([
+  const [products] = useState<ProductsListFilterInterface[]>([
     { id: 1, nome: "Mouse Gamer", categoria: "Informática", disponivel: true },
     { id: 2, nome: "Pc Gamer", categoria: "Informática", disponivel: false },
     { id: 3, nome: "Headset", categoria: "Informática", disponivel: true },
@@ -17,9 +22,9 @@ function ProdutosListFiltros() {
   ]);
 
   const [search, setSearch] = useState<string>("");
-  const filterItems = products.filter((item) => {
-    return item.nome.toLowerCase().includes(search.toLowerCase());
-  });
+  const [selectedCategory, setselectedCategory] = useState<Valores | null>(
+    null
+  );
 
   const categoriasUnicas = [
     ...new Set(
@@ -29,15 +34,19 @@ function ProdutosListFiltros() {
     ),
   ];
 
-  const filtrarCategorias = categoriasUnicas.map((cat) => ({
-    value: cat.toLocaleLowerCase,
+  const categorias = categoriasUnicas.map((cat) => ({
+    value: cat,
     label: cat,
   }));
 
-  // const [searchCategoryItem, setSearchCategoryItem] = useState("");
-  // const handleCategory = products.filter((item) => {
-  //   return item.categoria.toLowerCase().includes(searchCategoryItem);
-  // });
+  const filterItems = products.filter((item) => {
+    const s = search.trim().toLowerCase();
+    const matchNome = s === "" || item.nome.toLowerCase().includes(s);
+    const matchCategoria =
+      !selectedCategory || item.categoria === selectedCategory.value;
+
+    return matchNome && matchCategoria;
+  });
 
   return (
     <>
@@ -45,24 +54,26 @@ function ProdutosListFiltros() {
         <h1>Lista de Produtos com Filtro</h1>
         <input
           type="text"
-          className="bg-gray-700"
+          className="bg-gray-700 m-3.5"
           placeholder="Buscar por nome"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />
-        <div className="flex justify-around list-none  bg-red-700">
-          {filterItems.map((item) => (
-            <li key={item.id}>{item.nome}</li>
-          ))}
-          <div></div>
-        </div>
 
         <Select
-          options={filtrarCategorias}
-          value={null}
-          onChange={() => {}}
-          placeholder="Selecione um produto"
+          options={categorias}
+          value={selectedCategory}
+          onChange={(item) => setselectedCategory(item)}
+          placeholder="Filtre por categoria:"
+          isClearable
         />
+        <ul className="mt-3">
+          {filterItems.length === 0 ? (
+            <li>Nenhum produto foi encontrado</li>
+          ) : (
+            filterItems.map((p) => <li key={p.id}>{p.nome}</li>)
+          )}
+        </ul>
       </div>
     </>
   );

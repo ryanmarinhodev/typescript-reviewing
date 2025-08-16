@@ -3,4 +3,6 @@ export const paths = {
   LISTA_TAREFAS: "lista-tarefas",
   FORMULARIO: "formulario",
   PRODUTOS: "produtos",
+  TITULOS_DINAMICOS: "titulos-dinamicos",
+  MONTAR: "montar",
 };
