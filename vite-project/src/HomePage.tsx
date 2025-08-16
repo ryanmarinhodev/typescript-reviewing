@@ -50,9 +50,18 @@ function Home() {
               to={paths.TITULOS_DINAMICOS}
               className="bg-blue-800 hover:bg-blue-700 rounded-xl p-6 transition transform hover:-translate-y-1 shadow-md"
             >
-              <h2 className="text-xl font-semibold mb-2">useState</h2>
+              <h2 className="text-xl font-semibold mb-2">UseEffect</h2>
               <p className="text-gray-300 text-sm">
-                Lista de tarefas usando useState
+                Título da página dinâmico com useEffect
+              </p>
+            </Link>
+            <Link
+              to={paths.MONTAR}
+              className="bg-blue-800 hover:bg-blue-700 rounded-xl p-6 transition transform hover:-translate-y-1 shadow-md"
+            >
+              <h2 className="text-xl font-semibold mb-2">UseEffect</h2>
+              <p className="text-gray-300 text-sm">
+                Montar e desmontar com UseEffect
               </p>
             </Link>
           </div>

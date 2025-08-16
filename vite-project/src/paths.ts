@@ -4,4 +4,5 @@ export const paths = {
   FORMULARIO: "formulario",
   PRODUTOS: "produtos",
   TITULOS_DINAMICOS: "titulos-dinamicos",
+  MONTAR: "montar",
 };
