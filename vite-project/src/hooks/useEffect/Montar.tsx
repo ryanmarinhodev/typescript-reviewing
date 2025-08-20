@@ -1,21 +1,39 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+
+// interface MontarInterface {
+//   event: string
+// }
 
 function Montar() {
-  const handleHour = () => {
-    const date = new Date();
-    console.log(date.toLocaleTimeString());
-  };
+  const [save, setSave] = useState("");
+  const [lastSaved, setLastSaved] = useState();
+  console.log(lastSaved);
 
   useEffect(() => {
-    console.log("Montou");
-  }, []);
+    const breakTimeOut = setTimeout(() => {
+      console.log("Salvamento automático:");
+      console.log(`Dados Atual: ${save}`);
+    }, 800);
+
+    return () => {
+      clearTimeout(breakTimeOut);
+    };
+  }, [save]);
 
   return (
-    <>
-      <div>Montar</div>
-      <div>Montar</div>
-    </>
+    <div>
+      <input
+        type="text"
+        placeholder="Título"
+        className="bg-blue-700"
+        onChange={(e) => setSave(e.target.value)}
+      />
+      <h2>{`Ultimos dados salvos:`}</h2>
+      <h3>oi</h3>
+    </div>
   );
 }
 
 export default Montar;
+
+//Mostrar os últimos dados em tela
