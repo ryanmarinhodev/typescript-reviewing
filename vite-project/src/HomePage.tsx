@@ -61,7 +61,7 @@ function Home() {
             >
               <h2 className="text-xl font-semibold mb-2">UseEffect</h2>
               <p className="text-gray-300 text-sm">
-                Montar e desmontar com UseEffect
+                Dados salvos automáticamente com useEffect (olhar console)
               </p>
             </Link>
           </div>
