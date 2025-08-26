@@ -5,4 +5,5 @@ export const paths = {
   PRODUTOS: "produtos",
   TITULOS_DINAMICOS: "titulos-dinamicos",
   MONTAR: "montar",
+  PAINEL_NOTIFICACOES: "painel-notificacoes",
 };
