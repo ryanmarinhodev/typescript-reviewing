@@ -1,18 +1,16 @@
 import { useEffect, useState } from "react";
 
-// interface MontarInterface {
-//   event: string
-// }
-
-function Montar() {
+function AutoSave() {
   const [save, setSave] = useState("");
-  const [lastSaved, setLastSaved] = useState();
-  console.log(lastSaved);
+  const [lastSaved, setLastSaved] = useState<string>("");
+  const lastSavedLabel = lastSaved ? lastSaved : "-";
 
   useEffect(() => {
     const breakTimeOut = setTimeout(() => {
-      console.log("Salvamento automático:");
       console.log(`Dados Atual: ${save}`);
+      console.log("Dados salvos ultimos:", lastSaved);
+      console.log("Salvamento automático");
+      setLastSaved(new Date().toLocaleTimeString());
     }, 800);
 
     return () => {
@@ -25,15 +23,13 @@ function Montar() {
       <input
         type="text"
         placeholder="Título"
-        className="bg-blue-700"
+        className="bg-blue-300 text-black"
         onChange={(e) => setSave(e.target.value)}
       />
-      <h2>{`Ultimos dados salvos:`}</h2>
-      <h3>oi</h3>
+      <h2>Ultimos dados salvo:</h2>
+      <h3>{lastSavedLabel}</h3>
     </div>
   );
 }
 
-export default Montar;
-
-//Mostrar os últimos dados em tela
+export default AutoSave;

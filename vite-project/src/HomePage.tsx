@@ -61,7 +61,16 @@ function Home() {
             >
               <h2 className="text-xl font-semibold mb-2">UseEffect</h2>
               <p className="text-gray-300 text-sm">
-                Montar e desmontar com UseEffect
+                Dados salvos automáticamente com useEffect (olhar console)
+              </p>
+            </Link>
+            <Link
+              to={paths.PAINEL_NOTIFICACOES}
+              className="bg-blue-800 hover:bg-blue-700 rounded-xl p-6 transition transform hover:-translate-y-1 shadow-md"
+            >
+              <h2 className="text-xl font-semibold mb-2">UseEffect</h2>
+              <p className="text-gray-300 text-sm">
+                Painel de Notificações (Olhar Console)
               </p>
             </Link>
           </div>
